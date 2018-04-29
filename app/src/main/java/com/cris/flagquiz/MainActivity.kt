@@ -27,6 +27,18 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        var toolbar : Toolbar = findViewById(R.id.toolbar)
+        setSupportActionBar(toolbar)
+
+        PreferenceManager.setDefaultValues(this, R.xml.preference, false)
+
+        PreferenceManager.getDefaultSharedPreferences(this).
+                registerOnSharedPreferenceChangeListener(this)//
+
+        var screenSize : Int = resources.configuration.screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK//
+
+
+
 
     }
 
