@@ -1,24 +1,32 @@
 package com.cris.flagquiz
 
+import android.content.Intent
+import android.content.SharedPreferences
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener
+import android.content.pm.ActivityInfo
+import android.content.res.Configuration
 import android.os.Bundle
-import android.support.design.widget.Snackbar
+import android.preference.PreferenceManager
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.Toolbar
 import android.view.Menu
 import android.view.MenuItem
-import com.cris.flagquiz.R.id.toolbar
+import android.widget.Toast
 
-import kotlinx.android.synthetic.main.activity_main.*
+import java.util.Set
+
 
 class MainActivity : AppCompatActivity() {
+
+    val CHOICES = "pref_numberOfChoices"
+    val REGIONS = "pref_regionsToInclude"
+
+    private var phoneDevice = true
+    private var preferencesChanged = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        setSupportActionBar(toolbar)
-
-    }
-
-    private fun setSupportActionBar(toolbar: Int) {
 
     }
 
