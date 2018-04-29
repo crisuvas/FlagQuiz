@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/quizLinearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/fab_margin"
+    android:paddingLeft="@dimen/fab_margin"
+    android:paddingRight="@dimen/fab_margin"
+    android:paddingTop="@dimen/fab_margin"
     tools:context=".MainActivityFragment"
     tools:showIn="@layout/activity_main">
 
 
-</android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/questionNumberTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/spacing"
+        android:gravity="center_horizontal"
+        android:text="@string/question"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <ImageView
+        android:id="@+id/flagImageView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/spacing"
+        android:layout_marginLeft="@dimen/fab_margin"
+        android:layout_marginRight="@dimen/fab_margin"
+        android:layout_weight="1"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/image_description"
+        android:scaleType="fitCenter"
+        android:src="@android:drawable/btn_default" />
+</LinearLayout>
