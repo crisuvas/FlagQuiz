@@ -35,10 +35,13 @@ class MainActivity : AppCompatActivity() {
         PreferenceManager.getDefaultSharedPreferences(this).
                 registerOnSharedPreferenceChangeListener(this)//
 
-        var screenSize : Int = resources.configuration.screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK//
+        var screenSize : Int = getResources().getConfiguration().screenLayout & Configuration.SCREENLAYOUT_SIZE_MASK
 
+        if (screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE || screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE)
+            phoneDevice = false
 
-
+        if(phoneDevice)
+            requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT
 
     }
 
